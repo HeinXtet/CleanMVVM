@@ -27,6 +27,5 @@ class MainActivity : AppCompatActivity() {
         mainViewModel.liveData.observe(this, Observer {
 
         })
-
     }
 }

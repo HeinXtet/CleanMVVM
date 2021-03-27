@@ -1,7 +1,7 @@
 package com.deevvdd.mvvm_template.di
 
-import com.deevvdd.data.repository.MovieRepositoryImpl
-import com.deevvdd.domain.repository.MovieRepository
+import com.deevvdd.data.repository.movie.MovieRepositoryImpl
+import com.deevvdd.domain.repository.movie.MovieRepository
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

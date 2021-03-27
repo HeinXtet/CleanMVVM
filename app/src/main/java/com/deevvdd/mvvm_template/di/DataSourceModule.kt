@@ -1,11 +1,11 @@
 package com.deevvdd.mvvm_template.di
 
-import com.deevvdd.data.repository.CacheDataSourceImpl
-import com.deevvdd.data.repository.LocalDataSourceImpl
-import com.deevvdd.data.repository.RemoteDataSourceImpl
-import com.deevvdd.domain.repository.CacheDataSource
-import com.deevvdd.domain.repository.LocalDataSource
-import com.deevvdd.domain.repository.RemoteDataSource
+import com.deevvdd.data.repository.movie.MovieCacheDataSourceImpl
+import com.deevvdd.data.repository.movie.MovieLocalDataSourceImpl
+import com.deevvdd.data.repository.movie.MovieRemoteDataSourceImpl
+import com.deevvdd.domain.repository.movie.MovieCacheDataSource
+import com.deevvdd.domain.repository.movie.MovieLocalDataSource
+import com.deevvdd.domain.repository.movie.MovieRemoteDataSource
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -16,17 +16,17 @@ import dagger.hilt.components.SingletonComponent
 abstract class DataSourceModule {
     @Binds
     abstract fun bindMovieRemoteDataSource(
-        remoteDataSourceImpl: RemoteDataSourceImpl
-    ): RemoteDataSource
+        remoteDataSourceImpl: MovieRemoteDataSourceImpl
+    ): MovieRemoteDataSource
 
 
     @Binds
     abstract fun bindMovieLocalDataSource(
-        localDataSourceImpl: LocalDataSourceImpl
-    ): LocalDataSource
+        localDataSourceImpl: MovieLocalDataSourceImpl
+    ): MovieLocalDataSource
 
     @Binds
     abstract fun bindMovieCacheDataSource(
-        cacheDataSourceImpl: CacheDataSourceImpl
-    ): CacheDataSource
+        cacheDataSourceImpl: MovieCacheDataSourceImpl
+    ): MovieCacheDataSource
 }
