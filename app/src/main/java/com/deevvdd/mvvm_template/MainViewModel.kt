@@ -1,4 +1,4 @@
-package com.deevvdd
+package com.deevvdd.mvvm_template
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
@@ -15,17 +15,14 @@ import javax.inject.Inject
 class MainViewModel @Inject constructor(
     private val useCase: MovieUseCase
 ) : ViewModel() {
-
-    val liveData = MutableLiveData<List<Movie>>()
-
+    val popularMovies = MutableLiveData<List<Movie>>()
     init {
         fetchMovies()
     }
-
     fun fetchMovies() = viewModelScope.launch {
         useCase.getMovies().let { data ->
             Log.d("Response ", "Response ${data}")
-            liveData.value = data
+            popularMovies.value = data
         }
     }
 }

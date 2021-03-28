@@ -4,7 +4,7 @@
 
         <variable
             name="vm"
-            type="com.deevvdd.MainViewModel" />
+            type="com.deevvdd.mvvm_template.MainViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
