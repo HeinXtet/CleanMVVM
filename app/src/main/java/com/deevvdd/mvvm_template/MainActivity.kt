@@ -22,10 +22,5 @@ class MainActivity : AppCompatActivity() {
         binding.apply {
             vm = mainViewModel
         }
-        mainViewModel.testApi()
-
-        mainViewModel.liveData.observe(this, Observer {
-
-        })
     }
 }

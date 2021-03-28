@@ -1,5 +1,6 @@
 package com.deevvdd.data.repository.movie
 
+import android.util.Log
 import com.deevvdd.domain.model.Movie
 import com.deevvdd.domain.repository.movie.MovieCacheDataSource
 import com.deevvdd.domain.repository.movie.MovieLocalDataSource
@@ -43,7 +44,7 @@ class MovieRepositoryImpl @Inject constructor(
         lateinit var movieList: List<Movie>
         try {
             movieList = localDataSource.getMoviesFromDB()
-            if (!movieList.isEmpty()) {
+            if (movieList.isNotEmpty()) {
                 return movieList
             } else {
                 movieList = getMoviesFromAPI()
@@ -59,7 +60,7 @@ class MovieRepositoryImpl @Inject constructor(
         lateinit var movieList: List<Movie>
         try {
             movieList = cacheDataSource.getMoviesFromCache()
-            if (!movieList.isEmpty()) {
+            if (movieList.isNotEmpty()) {
                 return movieList
             } else {
                 movieList = getMoviesFromDB()

@@ -15,20 +15,20 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-class DbModule {
+object DbModule {
+
     @Singleton
     @Provides
-    fun provideDatabase(
+    fun provideMovieDatabase(
         @ApplicationContext app: Context
-    ): RoomDatabase = Room.databaseBuilder(
+    ) = Room.databaseBuilder(
         app,
         AppDatabase::class.java,
-        "tmdb"
-    ).build()
-
+        "tmdb_db"
+    ).build() // The reason we can construct a database for the repo
 
     @Singleton
     @Provides
-    fun provideMovieDao(db: AppDatabase): MovieDao = db.movieDao()
-
+    fun provideMovieDao(db: AppDatabase) =
+        db.movieDao() // The reason we can implement a Dao for the database
 }

@@ -60,10 +60,12 @@ dependencies {
     api "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version"
 
 
-    // Room Database
+    // Room Database for model class
     api "androidx.room:room-runtime:$room_version"
     kapt "androidx.room:room-compiler:$room_version"
     api "androidx.room:room-ktx:$room_version"
+    kapt "android.arch.persistence.room:compiler:1.1.1"
+
 
 
     // Coroutines

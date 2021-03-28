@@ -10,14 +10,19 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import javax.inject.Named
+import javax.inject.Qualifier
 import javax.inject.Singleton
+
+@Qualifier
+annotation class API_KEY
+
+@Qualifier
+annotation class BASE_URL
 
 @Module
 @InstallIn(SingletonComponent::class)
 class NetworkModule {
-
-    @Provides
-    fun provideBaseUrl() = "https://www.google.com/"
 
 
     @Singleton
@@ -34,10 +39,22 @@ class NetworkModule {
             .build()
     }
 
+    @Provides
+    @Named("BASE_URL")
+    fun provideBaseUrl() = "https://api.themoviedb.org/"
+
+    @Provides
+    @Named("API_KEY")
+    fun provideApiKey(): String {
+        return "961277648f1e28c74788bade62b3b24c"
+    }
 
     @Singleton
     @Provides
-    fun provideRetrofit(okHttpClient: OkHttpClient, baseUrl: String) =
+    fun provideRetrofit(
+        okHttpClient: OkHttpClient,
+        @Named("BASE_URL") baseUrl: String
+    ) =
         Retrofit.Builder()
             .baseUrl(baseUrl)
             .client(okHttpClient)
@@ -47,6 +64,5 @@ class NetworkModule {
     @Singleton
     @Provides
     fun provideApiService(retrofit: Retrofit) = retrofit.create(ApiService::class.java)
-
 
 }
