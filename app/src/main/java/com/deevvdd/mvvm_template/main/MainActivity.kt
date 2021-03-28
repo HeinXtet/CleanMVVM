@@ -1,13 +1,11 @@
-package com.deevvdd.mvvm_template
+package com.deevvdd.mvvm_template.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.deevvdd.domain.model.Movie
+import com.deevvdd.mvvm_template.R
 import com.deevvdd.mvvm_template.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 

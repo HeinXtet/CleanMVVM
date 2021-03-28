@@ -19,7 +19,4 @@ object ViewBindingExt{
             view.setImageDrawable(error)
         }
     }
-
-
 }
-

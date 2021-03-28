@@ -1,10 +1,14 @@
-package com.deevvdd.mvvm_template
+package com.deevvdd.mvvm_template.main
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.deevvdd.domain.model.Movie
 import com.deevvdd.mvvm_template.databinding.ItemMovieBinding
+import com.deevvdd.mvvm_template.detail.DetailScreen
 
 class MovieAdapter : RecyclerView.Adapter<MovieAdapter.MovieVH>() {
     private val movies = ArrayList<Movie>()
@@ -35,4 +39,6 @@ class MovieAdapter : RecyclerView.Adapter<MovieAdapter.MovieVH>() {
     }
 
     override fun getItemCount() = movies.count()
+
+
 }

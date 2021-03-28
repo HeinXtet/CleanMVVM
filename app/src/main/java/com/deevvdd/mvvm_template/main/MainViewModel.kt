@@ -1,4 +1,4 @@
-package com.deevvdd.mvvm_template
+package com.deevvdd.mvvm_template.main
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
