@@ -39,6 +39,7 @@ class NetworkModule {
             .build()
     }
 
+
     @Provides
     @Named("BASE_URL")
     fun provideBaseUrl() = "https://api.themoviedb.org/"
